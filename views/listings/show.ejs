@@ -16,7 +16,7 @@
     <div class="card col-6 offset-3 show-card listing-card">
         <img src="<%= idData.image.url %>" class="card-img-top show-img" alt="listing_image">
         <div class="card-body">
-            <p class="card-text mt-2"><i>Owned by</i> <b class="Owner-Name"><%= idData.owner.username %></b> </p> 
+            <p class="card-text mt-2"><i>Owned by</i> <b class="Owner-Name"><%= <%= idData.owner ? idData.owner.username : "Wanderlust User" %> %></b> </p> 
             <p class="card-text"> <%= idData.description %> </p>
             <p class="card-text"><i>Category: </i><%= idData.category %></p>    
             <p class="card-text"><i>Price: </i><%= idData.price.toLocaleString("en-IN") %></p>    
