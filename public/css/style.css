@@ -1,0 +1,282 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1; /* Expands the main content area to fill the remaining space, pushing the footer at the bottom. */
+}
+
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.bi-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important; /* By default, Bootstrap has its own Styling. To display our styling we use !important. */
+}
+
+/* Navbar mobile behavior */
+@media (max-width: 767px) {
+    .navbar-collapse {
+        background-color: white;
+        padding: 15px;
+    }
+}
+
+/* Navbar Button */
+.search-btn {
+    border: 1px solid !important;
+    border-radius: 1.5rem !important;
+    border-color: #fe424d !important;
+    color: #fe424d !important;
+    padding: 0 1rem 0 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    /* height: 45px !important; */
+}
+
+.search-btn:hover {
+    background-color: #fe424d !important;
+    color: white !important;
+}
+
+.search-bar {
+    border-radius: 1.5rem !important;
+    padding: 0.5rem 3rem 0.5rem 3rem !important;
+    /* font-size: 1rem !important; */
+}
+
+/* Footer */
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info {
+    background-color: #ebebeb;
+    height: 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* align-items: space-evenly; */
+    /* text-align: center; */
+}
+
+.f-info-socials,
+.f-info-links,
+.f-info-brands {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-info-socials i {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+/* Cards */
+.listing-card {
+    border: none !important;
+    margin-bottom: 1rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    height: 20rem;
+}
+
+.card-body {
+    padding: 0rem !important;
+}
+
+/* Font Styling */
+.card-text {
+    font-family:
+        "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif !important;
+    font-weight: 600 !important;
+    opacity: 0.9;
+}
+
+.card-text i {
+    opacity: 0.7;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.Owner-Name {
+    font-family:
+        "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif !important;
+}
+
+.indexpage-font {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* Filters Styling */
+
+.filters-container {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.filters {
+    display: flex;
+    margin-left: 2rem;
+}
+.filter {
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 1.5rem;
+    opacity: 0.7;
+}
+.filter:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+.animation-category {
+    display: inline-block;    /* <a> is inline element, so behaves like text. inline-block makes <a>*/
+    transform-origin: center; /* behave as small box, So transform like rotaionX etc works */
+}
+.filter p {
+    font-size: 0.8rem;
+}
+.filter a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+/* Tax */
+.tax-design {
+    /* border: 1.7px solid lightblue; */
+    border: 1px solid #222;
+    color: grey;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: white;
+    transition: all 0.3s ease-in;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.tax-design:has(input:checked) {
+    border-color: #ff385c;
+    color: #ff385c;
+    background-color: #ffecef;
+}
+
+.tax-info {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: red;
+    display: none
+}
+
+/* Menu button for filters in small screen size */
+.mobile-menu {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+
+    .filters-container {
+        flex-wrap: wrap;
+    }
+
+    .filters {
+        flex: 1;
+        display: none;
+        overflow-x: auto;
+    }
+
+    .mobile-menu {
+        display: block;
+        margin: 15px;
+    }
+
+    .mobile-menu button {
+        font-size: 20px;
+    }
+
+    .category-list {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .category-list a {
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+    }
+
+    .category-list a:hover {
+        background-color: #f0f0f0;
+    }
+
+    .tax-design {
+        margin-top: 1rem;
+        flex-shrink: 0;
+    }
+}
+
+/* Card Effect */
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* New Page */
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* Edit Page */
+.edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* Show Page */
+.show-img {
+    height: 30vh;
+}
+
+.btns {
+    display: flex;
+    gap: 12rem;
+}
+
+/* Map */
+#map {
+    height: 400px;
+    width: 100%;
+}

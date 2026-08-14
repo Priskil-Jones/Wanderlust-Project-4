@@ -1,0 +1,142 @@
+<!-- "layout()" tells EJS to wrap the current page(index.ejs, show.ejs) inside boilerplate.ejs --> 
+<% layout("/layouts/boilerplate") %>   
+
+    <!-- <h3>All Listings</h3> -->
+
+<!-- Commented this out because we have "Add new listing" in "Navbar.ejs" -->     
+    <!-- <form method="GET" action="/listings/new">
+        <button>Create New Listing</button>
+    </form> -->
+
+<div class="filters-container">
+
+    <div class="filters">
+        <div class="filter">
+            <a href="/listings?category=Trending" class="animation-category">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </a>
+        </div>
+
+        <div class="filter">
+            <a href="/listings?category=Rooms" class="animation-category">
+                <div><i class="fa-solid fa-bed"></i></div>
+                <p>Rooms</p>
+            </a>
+        </div>
+
+        <div class="filter">
+            <a href="/listings?category=Iconic cities" class="animation-category">
+                <div><i class="fa-solid fa-mountain-city"></i></div>
+                <p>Iconic cities</p>
+            </a>
+        </div>
+
+        <div class="filter">
+            <a href="/listings?category=Mountains" class="animation-category">
+                <div><i class="fa-solid fa-mountain"></i></div>
+                <p>Mountains</p>
+            </a>
+        </div>
+
+        <div class="filter">
+            <a href="/listings?category=Castles" class="animation-category">
+                <div><i class="fa-brands fa-fort-awesome"></i></div>
+                <p>Castles</p>
+            </a>
+        </div>
+
+        <div class="filter">
+            <a href="/listings?category=Amazing Pools" class="animation-category">
+                <div><i class="fa-solid fa-person-swimming"></i></div>
+                <p>Amazing Pools</p>
+            </a>
+        </div>
+
+        <div class="filter">
+            <a href="/listings?category=Camping" class="animation-category">
+                <div><i class="fa-solid fa-campground"></i></div>
+                <p>Camping</p>
+            </a>
+        </div>
+
+        <div class="filter">
+            <a href="/listings?category=Farms" class="animation-category">
+                <div><i class="fa-solid fa-cow"></i></div>
+                <p>Farms</p>
+            </a>
+        </div>
+
+        <div class="filter">
+            <a href="/listings?category=Arctic" class="animation-category">
+                <div><i class="fa-regular fa-snowflake"></i></div>
+                <p>Arctic</p>
+            </a>
+        </div>
+    </div>
+
+        <div class="tax-design">
+            <div class="form-check-reverse form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                <label class="form-check-label" for="switchCheckDefault">Display total after taxes</label>
+            </div>
+        </div>
+ </div>
+
+
+<div class="mobile-menu">
+        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#categoryMenu" aria-expanded="false" aria-controls="categoryMenu">
+            ☰
+        </button>
+        
+    <div class="collapse" id="categoryMenu">
+        <div class="category-list">
+            <a href="/listings?category=Trending"><i class="fa-solid fa-fire"></i> Trending</a>
+            <a href="/listings?category=Rooms"><i class="fa-solid fa-bed"></i> Rooms</a>
+            <a href="/listings?category=Iconic cities"><i class="fa-solid fa-mountain-city"></i> Iconic Cities</a>
+            <a href="/listings?category=Mountains"><i class="fa-solid fa-mountain"></i> Mountains</a>
+            <a href="/listings?category=Castles"><i class="fa-brands fa-fort-awesome"></i> Castles</a>
+            <a href="/listings?category=Amazing Pools"><i class="fa-solid fa-person-swimming"></i> Amazing Pools</a>
+            <a href="/listings?category=Camping"><i class="fa-solid fa-campground"></i> Camping</a>
+            <a href="/listings?category=Farms"><i class="fa-solid fa-cow"></i> Farms</a>
+            <a href="/listings?category=Arctic"><i class="fa-regular fa-snowflake"></i> Arctic</a>
+        </div>
+    </div>
+</div>
+
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4 mt-3">
+        <% for (displayList of allListings) { %>
+            <a href="/listings/<%= displayList._id %>" class="listing-link animation-card">
+                <div class="card col listing-card">
+
+                    <img src="<%= displayList.image.url %>" class="card-img-top" alt="listing_image">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-body">
+                        <p class="card-text indexpage-font">
+                        <b> <%= displayList.title %> </b> <br>
+                        &#8377; <%= displayList.price.toLocaleString("en-IN") %> / night
+                        <i class="tax-info">&nbsp; &nbsp; +18% GST</i>
+                        </p>
+                    </div>
+
+                </div>
+            </a>
+        <% } %>
+    </div>
+
+
+
+<script>
+    let taxSwitch = document.getElementById("switchCheckDefault");
+    taxSwitch.addEventListener("click", ()=> {
+        let taxInfo = document.getElementsByClassName("tax-info");
+        for(info of taxInfo) {
+            if (info.style.display != "inline") {
+                info.style.display = "inline";
+            } else {
+                info.style.display = "none";
+            }
+        }
+    });
+</script>
