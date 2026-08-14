@@ -15,7 +15,7 @@ const passport = require("passport");             //Manages Login, Logout, User 
 const LocalStrategy = require("passport-local");  //Login methods like: Google Login, Facebook Login etc
 const User = require("./models/user.js");         //User Model
 
-const port = process.env.PORT || 8080;
+const port = 8080;
 const DB_URL = process.env.ATLASDB_URL;
 
 const path = require("path");
