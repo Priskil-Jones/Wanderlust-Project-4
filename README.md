@@ -7,7 +7,7 @@ Wanderlust is a full-stack travel listing web application inspired by modern vac
 
 👉 **Click "Explore" on the homepage to view the website.**
 
-👉 **Open in PC/Laptop for better view**
+👉 **Open in PC/Laptop for better view.**
 
 
 🔗 **GitHub Repository:** https://github.com/Priskil-Jones
