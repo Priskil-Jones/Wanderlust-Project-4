@@ -16,7 +16,7 @@ const LocalStrategy = require("passport-local");  //Login methods like: Google L
 const User = require("./models/user.js");         //User Model
 
 const port = 8080;
-const DB_URL = process.env.ATLASDB_URL;
+const DB_URL = process.env.MONGO_URL;
 
 const path = require("path");
 app.set("view engine", "ejs");
@@ -67,10 +67,10 @@ passport.serializeUser(User.serializeUser());      //Stores logged-in user's id 
 passport.deserializeUser(User.deserializeUser());  //Retreive full user details from thr stored session id
 
 app.use((req, res, next)=> {
-    res.locals.currUser = req.user;
     res.locals.successMsg = req.flash("success");        //saved in "successMsg" inside res.locals{  }
     res.locals.errorMsg = req.flash("error");
     res.locals.deleteMsg = req.flash("delete");
+    res.locals.currUser = req.user;
     next();
 });
 
@@ -93,6 +93,11 @@ async function main() {
     await mongoose.connect(DB_URL);
 }
 
+app.listen(port, () => {
+    console.log(`Server is listening to port: ${port}`);
+});
+
+
 app.all("/{*any}", (req, res, next)=> {
     next(new ExpressError(404, "Page not found"));
 });
@@ -103,10 +108,6 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("error.ejs", { err });
     // res.status(statusCode).send(message);
     // res.send("Something went wrong");
-});
-
-app.listen(port, () => {
-    console.log(`Server is listening to port: ${port}`);
 });
 
 
