@@ -67,6 +67,7 @@ passport.serializeUser(User.serializeUser());      //Stores logged-in user's id 
 passport.deserializeUser(User.deserializeUser());  //Retreive full user details from thr stored session id
 
 app.use((req, res, next)=> {
+    console.log("Current User: ", req.user);
     res.locals.successMsg = req.flash("success");        //saved in "successMsg" inside res.locals{  }
     res.locals.errorMsg = req.flash("error");
     res.locals.deleteMsg = req.flash("delete");
