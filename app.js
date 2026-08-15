@@ -16,7 +16,7 @@ const LocalStrategy = require("passport-local");  //Login methods like: Google L
 const User = require("./models/user.js");         //User Model
 
 const port = 8080;
-const DB_URL = process.env.MONGO_URL;
+const DB_URL = process.env.ATLASDB_URL;
 
 const path = require("path");
 app.set("view engine", "ejs");
