@@ -1,7 +1,10 @@
-# 🌍 Wanderlust — Travel Listing Platform
+# 🌍 Wanderlust — Airbnb Clone
 
-Wanderlust is a full-stack travel listing web application inspired by modern vacation-rental platforms. It allows users to explore travel destinations, create and manage listings, upload images, leave reviews, and view listing locations on an interactive map.
+Wanderlust is a full-stack **Airbnb-inspired travel listing web application** built as part of my web development journey.
 
+The application allows users to explore vacation listings, view listing details and locations on an interactive map, create and manage their own listings, upload images, and leave reviews and ratings.
+
+> ⚠️ This project is an educational Airbnb clone created for learning and portfolio purposes. It is not affiliated with or endorsed by Airbnb.
 
 🌐 **Live Demo:** https://wanderlust-project-4-f993.onrender.com 
 
