@@ -3,7 +3,8 @@
 Wanderlust is a full-stack travel listing web application inspired by modern vacation-rental platforms. It allows users to explore travel destinations, create and manage listings, upload images, leave reviews, and view listing locations on an interactive map.
 
 
-🌐  **Live Demo:** https://wanderlust-project-4-f993.onrender.com           (Go to explore page to view website)
+🌐 **Live Demo:** https://wanderlust-project-4-f993.onrender.com 
+👉 **Click "Explore" on the homepage to view the website.**
 
 🔗 **GitHub Repository:** https://github.com/Priskil-Jones
 
