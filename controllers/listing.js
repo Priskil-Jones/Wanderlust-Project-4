@@ -82,10 +82,6 @@ module.exports.renderEditForm = async (req, res) => {           // Edit/Update R
 module.exports.updateListing = async (req, res) => {
     let { id } = req.params;
     console.log(req.body);
-
-    const response = await maptilerClient.geocoding.forward(req.body.listing.location, { limit: 1 });
-
-    const geometry = response.features[0].geometry;
     let updatedListing = await Listing.findByIdAndUpdate(id, { ...req.body.listing }, {new: true, runValidators: true});
 
     if (req.file) {
