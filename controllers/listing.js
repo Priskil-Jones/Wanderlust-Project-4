@@ -80,7 +80,7 @@ module.exports.renderEditForm = async (req, res) => {           // Edit/Update R
 
 module.exports.updateListing = async (req, res) => {
     let { id } = req.params;
-    let updatedListing = await Listing.findByIdAndUpdate(id, { ...req.body.listing });
+    let updatedListing = await Listing.findByIdAndUpdate(id, { ...req.body.listing }, {new: true, runValidators: true});
 
     if (req.file) {
         let url = req.file.path;
